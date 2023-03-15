@@ -1,7 +1,8 @@
 from kivymd.app import MDApp
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.pickers import MDDatePicker
+# from kivymd.uix.pickers import MDDatePicker  # Todo вернуть изменения перед building app
+from kivymd.uix.picker import MDDatePicker
 from datetime import datetime
 from kivymd.uix.list import TwoLineAvatarIconListItem, ILeftBodyTouch
 from kivymd.uix.selectioncontrol import MDCheckbox
@@ -62,10 +63,8 @@ class ListItemWithCheckbox(TwoLineAvatarIconListItem):
         db.delete_task(the_list_item.pk)# Here
 
 
-
 class LeftCheckbox(ILeftBodyTouch, MDCheckbox):
     '''Custom left container'''
-
 
 
 class MainApp(MDApp):
@@ -115,6 +114,7 @@ class MainApp(MDApp):
         # return the created task details and create a list item
         self.root.ids['container'].add_widget(ListItemWithCheckbox(pk=created_task[0], text='[b]'+created_task[1]+'[/b]', secondary_text=created_task[2]))# Here
         task.text = ''
+
 
 if __name__ == '__main__':
     app = MainApp()
