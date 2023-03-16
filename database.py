@@ -10,7 +10,6 @@ class Database:
         """Create tasks table"""
         self.cursor.execute("CREATE TABLE IF NOT EXISTS tasks(id integer PRIMARY KEY AUTOINCREMENT, task varchar(50) NOT NULL, due_date varchar(50), completed BOOLEAN NOT NULL CHECK (completed IN (0, 1)))")
         self.con.commit()
-        
 
     def create_task(self, task, due_date=None):
         """Create a task"""
@@ -27,8 +26,6 @@ class Database:
         completed_tasks = self.cursor.execute("SELECT id, task, due_date FROM tasks WHERE completed = 1").fetchall()
 
         return completed_tasks, uncomplete_tasks
-
-    
 
     def mark_task_as_complete(self, taskid):
         """Marking tasks as complete"""

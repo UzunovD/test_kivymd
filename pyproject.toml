@@ -2,19 +2,19 @@
 name = "todo-application-kivymd"
 version = "0.1.0"
 description = "A simple todo application made using kivymd"
-authors = ["Ngonie-x, Dmitry Uzunov <duyz@bmm.ru>"]
+authors = ["Nzenze <ngonidzashedelight@gmail.com>, Dmitry Uzunov <duyz@bmm.ru>"]
 readme = "README.md"
 packages = [{include = "todo_application_kivymd"}]
 
 [tool.poetry.dependencies]
 python = "==3.10.10"
-Kivy = "^2.0.0"
-kivymd = "^0.104.2"
-pymssql = "^2.2.7"
+kivymd = "^1.1.1"
 
 [tool.poetry.group.dev.dependencies]
+Cython = "^0.29.33"
+buildozer = {git = "https://github.com/kivy/buildozer"}
 pytest = "^7.2.2"
-mypy = "^1.1.1"
+python-for-android = "^2023.2.10"
 
 [build-system]
 requires = ["poetry-core"]
